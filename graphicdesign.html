@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grapghic design</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/2fa262d30e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="gradient-bg">
+        <div class="gradients-container">
+          <div class="g1"></div>
+          <div class="g2"></div>
+          <div class="g3"></div>
+          <div class="g4"></div>
+          <div class="g5"></div>
+          <div class="interactive"></div>
+        </div>
+      </div>
+
+<div id="graphicdesignheader">
+    <div class="container">
+        <nav>
+            <a href="index.html"> <img src="Images/Nipuna logo white.png" class="logo"></a>
+        </nav>        
+    </div>
+</div>
+
+<!---------service1--------->    
+
+<div id="graphicservice">
+    <div class="graphicdesigncontainer">
+        <h1 class="sub-title"></h1>
+        <div class="graphicservice-list">
+        <div>
+            <i class="fa-solid fa-palette"></i></a>  <!--Icon--> 
+            <h2>Graphic Design</h2>
+            <p> Are you ready to elevate your brand's visual presence to new heights? <br>
+                Look no further! I'm here to turn your creative ideas into captivating reality. With a commitment to unmatched quality and unlimited revisions, <br>
+                your satisfaction is my priority. I offer a versatile range of design services, from attention-grabbing social media posts to striking logos,<br>
+                eye-catching flyers, and more. What sets me apart is my dedication to custom designs that align with your unique brand personality. Together,<br> 
+                we'll refine each project until it's a perfect fit for your vision. Let's collaborate seamlessly, and together, we'll create graphic designs <br>
+                that make a lasting impact. Contact me now to unlock the full potential of exceptional graphic design. Your brand deserves nothing less!
+            </p>
+            
+            <a class="graphicdesignbackbtn"  onClick= window.history.back()>Back</a>
+            <a href="portfoliomenu.html" class="graphicdesignbtn">See Portfolio</a>
+        </div>   
+        </div>
+    </div>
+</div>
+  
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const interBubble = document.querySelector('.interactive');
+        let curX = 0;
+        let curY = 0;
+        let tgX = 0;
+        let tgY = 0;
+
+        function move() {
+            curX += (tgX - curX) / 20;
+            curY += (tgY - curY) / 20;
+            interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+            requestAnimationFrame(move);
+        }
+
+        window.addEventListener('mousemove', (event) => {
+            tgX = event.clientX;
+            tgY = event.clientY;
+        });
+
+        move();
+    });
+</script>  
+</body>
+</html>

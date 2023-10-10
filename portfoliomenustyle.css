@@ -1,0 +1,367 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+body {
+    background: #080808;
+    color: #fff;
+    
+}
+/*----bg-animation----*/
+
+.gradient-bg{
+    
+    position: absolute;
+    top: 0px !important;
+    inset: 0;
+    justify-content: center;
+    display: inline-flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    
+}
+.justify-center{
+    justify-content: center;
+    
+    }
+:root {
+  --color-bg1: rgb(0, 0, 0);
+  --color-bg2: rgb(0, 0, 0);
+  --color1: 18, 113, 255;
+  --color2: 221, 74, 255;
+  --color3: 255, 54, 255;
+  --color4: 200, 50, 50;
+  --color5: 255, 24, 136;
+  --color-interactive: 208, 67, 255;
+  --circle-size: 80%;
+  --blending: hard-light;
+  
+}
+@keyframes moveInCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveVertical {
+  0% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+  50% {
+    transform: translateX(50%) translateY(10%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+}
+
+.gradient-bg .gradients-container {
+  filter: url(#goo) blur(40px);
+  width: 100%;
+  height: 100%;
+}
+
+.gradient-bg .g1 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2);
+  left: calc(50% - var(--circle-size) / 2);
+  transform-origin: center center;
+  animation: moveVertical 30s ease infinite;
+  opacity: 1;
+}
+
+.gradient-bg .g2 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2);
+  left: calc(50% - var(--circle-size) / 2);
+  transform-origin: calc(50% - 400px);
+  animation: moveInCircle 20s reverse infinite;
+  opacity: 1;
+}
+
+.gradient-bg .g3 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2 + 200px);
+  left: calc(50% - var(--circle-size) / 2 - 500px);
+  transform-origin: calc(50% + 400px);
+  animation: moveInCircle 40s linear infinite;
+  opacity: 1;
+}
+
+.gradient-bg .g4 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2);
+  left: calc(50% - var(--circle-size) / 2);
+  transform-origin: calc(50% - 200px);
+  animation: moveHorizontal 40s ease infinite;
+  opacity: 0.7;
+}
+
+.gradient-bg .g5 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: calc(var(--circle-size) * 2);
+  height: calc(var(--circle-size) * 2);
+  top: calc(50% - var(--circle-size));
+  left: calc(50% - var(--circle-size));
+  transform-origin: calc(50% - 800px) calc(50% + 200px);
+  animation: moveInCircle 20s ease infinite;
+  opacity: 1;
+}
+
+.gradient-bg .interactive {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: 100%;
+  height: 100%;
+  top: -50%;
+  left: -50%;
+  opacity: 0.7;
+}
+/*----bg-animation-end----*/  
+
+.portfoliomenucontainer{
+    padding: 0px 10%;
+    
+}
+/*--------services---------*/
+#container{
+    padding: 40px 0;
+
+}
+.portfoliomenu-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-gap:40px;
+    margin-top: 50px;
+}
+.portfoliomenu-list div{     /*tiles*/
+    background: linear-gradient(135deg,rgba(255,255,255,0.1),rgba(255,255,255,0));
+    padding: 40px;
+    margin: 0px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    backdrop-filter: blur(-10px);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+    transition: background 0.5s, transform 0.5s;
+
+}
+.portfoliomenu-list div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+    color: #c3e947;
+    
+
+}
+.portfoliomenu-list div h2{ /*content*/
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.portfoliomenu-list div p{
+    font-size: 13px;
+}
+
+.portfoliomenu-list div a{ /*link*/
+    text-decoration: none;
+    color: #c3e947;
+    font-size: 12px;
+    margin-top: 0px;
+    display: inline-block;
+
+}
+.portfoliomenu-list div:hover i ,/* Change the color of icon to transparent on hover */
+.portfoliomenu-list div:hover h2 , /* Change the color of headding to  transparent on hover */
+.portfoliomenu-list div:hover p ,/* Change the color of pharagraph to transparent on hover */
+.portfoliomenu-list div:hover a {
+    color: transparent; /* Change the color of learnmore to transparent on hover */
+}
+#item-1:hover {
+    animation: animate 5s ease infinite;
+    background: #c3e947 url("Images/Giftery\ Insta\ post\ mockup.png") center/cover;
+    transform: translateY(10px) scale(1.6);
+}
+
+#item-2:hover {
+    animation: animate 5s ease infinite;
+    background: #c3e947 url("Images/KDUSCUidesignmockup.png") center/cover;
+    transform: translateY(10px) scale(1.6);
+}
+#item-3:hover {
+    animation: animate 5s ease infinite;
+    background: #c3e947 url("Images/webportfoliomockup.png") center/cover;
+    transform: translateY(10px) scale(1.6);
+}
+#item-4:hover {
+    animation: animate 5s ease infinite;
+    background: #c3e947 url("Images/giftery\ busnesscard\ mockup.png") center/cover;
+    transform: translateY(10px) scale(1.6);
+}
+#item-5:hover {
+    animation: animate 5s ease infinite;
+    background: #c3e947 url("Images/") center/cover;
+    transform: translateY(10px) scale(1.6);
+}
+#item-6:hover {
+    animation: animate 5s ease infinite;
+    background: #c3e947 url("Images/") center/cover;
+    transform: translateY(10px) scale(1.6);
+}
+#item-7:hover {
+    animation: animate 5s ease infinite;
+    background: #c3e947 url("Images/") center/cover;
+    transform: translateY(10px) scale(1.6);
+}
+#item-8:hover {
+    animation: animate 5s ease infinite;
+    background: #c3e947 url("Images/") center/cover;
+    transform: translateY(10px) scale(1.6);
+}
+
+       
+
+/*------------button------------*/
+
+.portfoliomenubtn{
+    display: block;
+    margin: 20px 151px;
+    width: fit-content;
+    border: 1px solid #c3e947;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+    
+}
+.portfoliomenubtn:hover{
+    background: #c3e947;
+    color: #080808;
+    transform: scale(1.02);
+}
+/*-------------css for small screen---------------*/
+nav .fa-solid{
+    display: none;
+}
+@media only screen and (max-width: 600px){
+    #header{
+        background-image: url(Images/phone-background.png);
+    }
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .header-text h1{
+        font-size: 30px;
+    }
+    nav .fa-solid{
+        display: block;
+        font-size: 25px;
+    }
+    nav ul{
+        background: #c147e9;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    nav ul .fa-solid{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+
+    }
+    .sub-title{
+        font-size: 40px;
+
+    }
+    .about-col-1, .about-col-2{
+        flex-basis: 100%;
+    }
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+    .about-col-2{
+        font-size: 14px;
+    }
+    .tab-links{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+    }
+    .copyright{
+        font-size: 14px;
+    }
+
+
+.gradient-bg .gradients-container {
+
+position: fixed;
+}
+.btn{
+    margin: 0px 120px;
+}}
+#msg{
+    color: #61b752;
+    margin-top: -40px;
+    display: block;
+}

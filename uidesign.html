@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI design</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/2fa262d30e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="gradient-bg">
+        <div class="gradients-container">
+          <div class="g1"></div>
+          <div class="g2"></div>
+          <div class="g3"></div>
+          <div class="g4"></div>
+          <div class="g5"></div>
+          <div class="interactive"></div>
+        </div>
+      </div>
+    
+    <div id="uidesignheader">
+        <div class="container">
+            <nav>
+                <a href="index.html"> <img src="Images/Nipuna logo white.png" class="logo"></a>
+            </nav>        
+        </div>
+    </div>
+  
+<!---------service1--------->    
+
+<div id="uiservice">
+    <div class="uidesigncontainer">
+        <h1 class="sub-title"></h1>
+        <div class="uiservice-list">
+        <div>
+            <i class="fa-solid fa-object-group"></i></a>    <!--Icon-->
+            <h2>UI Design</h2>
+            <p>Ready to transform user experiences into memorable journeys? <br>
+               Discover the world of exceptional UI design with me. I specialize in crafting intuitive, visually appealing interfaces that captivate users and elevate<br> 
+               your digital presence. With a keen eye for detail and a commitment to seamless user interactions, I ensure every design is tailor-made to enhance <br>
+               your brand's identity. Whether it's web, mobile, or app UI, I offer comprehensive UI design services. Let's collaborate to create interfaces that not only<br> 
+               meet but exceed user expectations. Your digital success begins here; let's bring your vision to life through stunning UI design.</p>
+            
+            <a class="uidesignbackbtn"  onClick= window.history.back()>Back</a>
+            <a href="portfoliomenu.html" class="uidesignbtn">See Portfolio</a>
+        </div>   
+        </div>
+    </div>
+  </div>  
+  
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          const interBubble = document.querySelector('.interactive');
+          let curX = 0;
+          let curY = 0;
+          let tgX = 0;
+          let tgY = 0;
+  
+          function move() {
+              curX += (tgX - curX) / 20;
+              curY += (tgY - curY) / 20;
+              interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+              requestAnimationFrame(move);
+          }
+  
+          window.addEventListener('mousemove', (event) => {
+              tgX = event.clientX;
+              tgY = event.clientY;
+          });
+  
+          move();
+      });
+  </script>  
+
+</body>
+</html>
